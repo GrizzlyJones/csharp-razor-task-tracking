@@ -5,6 +5,13 @@ namespace Tasker.Pages
 {
     public class CreateTaskModel : PageModel
     {
+        private readonly ApplicationDbContext _context;
+
+        public CreateTaskModel(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
         [BindProperty]
         public Task NewTask { get; set; }
 
@@ -15,6 +22,8 @@ namespace Tasker.Pages
 
         public IActionResult OnPost()
         {
+            _context.Tasks.Add(NewTask);
+            _context.SaveChanges();
             return RedirectToPage("Index");
         }
     }
