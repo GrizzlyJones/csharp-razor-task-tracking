@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Tasker
+namespace Tasker.Pages
 {
     public class CreateTaskModel : PageModel
     {
